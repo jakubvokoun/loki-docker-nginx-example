@@ -1,11 +1,5 @@
-# loki-docker-nginx-example
+# Nginx, Promtail, Grafana & Loki exmaple
 
-docker plugin install grafana/loki-docker-driver:latest --alias loki --grant-all-permissions
+Froked from: https://github.com/IrekRomaniuk/loki-docker-nginx-example/
 
-brew install promtail
-
-wget https://raw.githubusercontent.com/grafana/loki/master/cmd/promtail/promtail-local-config.yaml
-
-promtail -config.file=./config/promtail-local-config.yaml
-
-docker run -d -v /var/log/:/var/log/ grafana/promtail:latest -config.file=./config/promtail-local-config.yaml
+https://volkovlabs.io/blog/nginx-loki-grafana-20230129/

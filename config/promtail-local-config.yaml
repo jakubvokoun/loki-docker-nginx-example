@@ -9,17 +9,11 @@ clients:
   - url: http://loki:3100/loki/api/v1/push
 
 scrape_configs:
-- job_name: test
+- job_name: nginx
   static_configs:
   - targets:
       - localhost
     labels:
-      job: testlogs
-      __path__: /var/log/test/*log
-- job_name: root
-  static_configs:
-  - targets:
-      - localhost
-    labels:
-      job: rootlogs
-      __path__: /var/log/root/*log      
+      job: nginx
+      host: nginx
+      __path__: /var/log/nginx/json_access.log
